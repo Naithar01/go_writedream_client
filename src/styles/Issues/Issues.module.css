@@ -1,0 +1,27 @@
+/* div 태그, Issue의 전체적인 margin */
+.issue {
+  margin-top: 20px;
+}
+
+/* 다수의 Issue끼리의 margin */
+.issue_list {
+  margin: 20px 0px;
+}
+
+/* 제목에는 title, Memo Count가 들어감 Flex 사용 */
+.issue_list_header_title {
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  margin-bottom: 3px;
+}
+
+/* 제목에 들어가는 Memo Count 따로 크기 조절 */
+.issue_list_header_title_memo_count {
+  font-size: 14px;
+}
+
+/* Issue 생성일 크기 수정 */
+.issue_list_header_create_at {
+  font-size: 12px;
+}

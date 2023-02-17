@@ -1,0 +1,41 @@
+/* 양옆 사이드의 거리를 주기 위한 */
+/* 스타일링을 위한 선을 그려주는 코드 */
+.main_navigation {
+  margin: 8px 0px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid black;
+}
+
+/* navigation의 리스트들을 정렬 */
+.navigation_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* a 태그의 언더바 */
+/* a 태그의 글자 색 */
+.navigation_header a {
+  color: black;
+  text-decoration: none;
+}
+
+/* 페이지 로고의 글자크기 */
+.navigation_header_page_logo {
+  font-size: 24px;
+}
+
+/* li 태그의 list 속성 */
+/* li 태그의 일자로 나열 */
+/* li 태그끼리의 거리 */
+.navigation_header_page_list li {
+  display: inline;
+  list-style: none;
+  margin-left: 8px;
+}
+
+/* a 태그의 클릭이 되는 면적을 넓혀주는 코드 */
+.navigation_header_page_logo a,
+.navigation_header_page_list li a {
+  padding: 8px 0px;
+}

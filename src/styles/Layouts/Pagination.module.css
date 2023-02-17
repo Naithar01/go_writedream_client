@@ -1,0 +1,21 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 1px solid black;
+  padding-top: 8px;
+}
+
+.pagination_page_btn_list li {
+  border: 1px solid black;
+  margin-right: 8px;
+  display: inline;
+  list-style: none;
+}
+
+.pagination_page_btn_list a {
+  padding: 8px 6px;
+  text-decoration: none;
+  color: black;
+}
