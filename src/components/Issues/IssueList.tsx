@@ -1,5 +1,5 @@
 import { IssueModel } from "../../Lib/issue";
-import IssueItem from "./IssueItem";
+import IssueItem from "./item/IssueItem";
 
 import styles from "../../styles/Issues/Issues.module.css";
 

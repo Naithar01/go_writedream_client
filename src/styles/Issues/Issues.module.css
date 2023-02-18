@@ -16,6 +16,12 @@
   margin-bottom: 3px;
 }
 
+/* Read Issue로 이동하기 위한 A 태그의 Css 수정 */
+.issue_list_header a {
+  color: black;
+  text-decoration: none;
+}
+
 /* 제목에 들어가는 Memo Count 따로 크기 조절 */
 .issue_list_header_title_memo_count {
   font-size: 14px;

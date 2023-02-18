@@ -1,9 +1,9 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GetIssuePagination, IssueModel } from "../Lib/issue";
-import IssueList from "../components/Issues/IssueList";
-import PageHeader from "../components/Layouts/Header/PageHeader";
-import Pagination from "../components/Layouts/Pagination";
+import { GetIssuePagination, IssueModel } from "../../Lib/issue";
+import IssueList from "../../components/Issues/IssueList";
+import PageHeader from "../../components/Layouts/Header/PageHeader";
+import Pagination from "../../components/Layouts/Pagination";
 
 const IssuePage = () => {
   const navigate = useNavigate();

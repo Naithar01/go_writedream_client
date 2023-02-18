@@ -1,3 +1,5 @@
+import { MemoModel } from "./memo";
+
 export interface IssueModel {
   id: number;
   title: string;
@@ -6,6 +8,16 @@ export interface IssueModel {
   created_at: string;
   updated_at: string;
   memo_count: number;
+}
+
+export interface ReadIssueModel {
+  id: number;
+  title: string;
+  content: string;
+  view_count: number;
+  created_at: string;
+  updated_at: string;
+  memos: MemoModel[];
 }
 
 export const GetIssuePagination = async (page: number, page_limit: number) => {
@@ -21,6 +33,22 @@ export const GetIssuePagination = async (page: number, page_limit: number) => {
   }
 
   return await fetch(`/api/issues?page=${page}&page_limit=${page_limit}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      alert("Error");
+    });
+};
+
+export const ReadIssue = async (issue_id: Number) => {
+  return await fetch(`/api/issues/${issue_id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

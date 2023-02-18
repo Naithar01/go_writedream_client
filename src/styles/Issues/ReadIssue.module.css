@@ -1,0 +1,17 @@
+/* 메인 Header 의 Issue title */
+.read_issue_item_header_title {
+  font-size: 24px;
+}
+
+/* Header의 Title을 제외한 모든 태그를 작게 */
+.read_issue_item_header p,
+.read_issue_item_header span {
+  font-size: 14px;
+}
+
+/* Issue의 Content를 묶는 클래스, Header와의 공백을 위함 */
+.read_issue_item_content {
+  padding-top: 25px;
+  margin-top: 25px;
+  border-top: 1px solid #ddd;
+}
