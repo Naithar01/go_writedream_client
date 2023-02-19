@@ -15,3 +15,13 @@
   margin-top: 25px;
   border-top: 1px solid #ddd;
 }
+
+/* 뒤로가기 버튼 Css */
+.go_back_btn {
+  cursor: pointer;
+}
+
+/* Issue의 택스트 영역의 Memo 부분과 거리를 두기 위한 */
+.read_issue_item_content_text {
+  min-height: 560px;
+}

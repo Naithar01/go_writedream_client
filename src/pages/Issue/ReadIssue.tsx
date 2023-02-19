@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ReadIssue, ReadIssueModel } from "../../Lib/issue";
 import ReadIssueItem from "../../components/Issues/item/ReadIssueItem";
 
+import styles from "../../styles/Issues/ReadIssue.module.css";
+
 const ReadIssuePage = () => {
   const navigate = useNavigate();
   const params = useParams();
@@ -32,8 +34,16 @@ const ReadIssuePage = () => {
     setIssue(data.issue);
   };
 
+  const GoBack = () => {
+    navigate(-1);
+    return;
+  };
+
   return (
     <div className="read_issue_page">
+      <div onClick={GoBack} className={styles.go_back_btn}>
+        Go Back
+      </div>
       {issue && <ReadIssueItem issue={issue} />}
     </div>
   );

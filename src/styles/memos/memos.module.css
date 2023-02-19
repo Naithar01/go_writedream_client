@@ -1,0 +1,22 @@
+/* Memo와 Issue의 간격 */
+.memo_list {
+  margin-top: 30px;
+  padding-top: 15px;
+}
+
+/* Memo 끼리의 거리를 위한 */
+.memo_item {
+  border-top: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+
+/* Memo의 텍스트(타이틀) 크기 */
+.memo_item_header_text {
+  font-size: 14px;
+}
+
+/* Memo의 작성일 텍스트 크기 */
+.memo_item_header_create_at {
+  font-size: 12px;
+}
