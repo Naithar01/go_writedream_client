@@ -22,7 +22,12 @@ export interface ReadIssueModel {
 
 export const GetIssuePagination = async (page: number, page_limit: number) => {
   if (page == 0 || page_limit == 0) {
-    return await fetch(`/api/issues?page=1&page_limit=5`)
+    return await fetch(`/api/issues?page=1&page_limit=5`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         return data;

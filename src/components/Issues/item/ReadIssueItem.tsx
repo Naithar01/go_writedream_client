@@ -5,9 +5,17 @@ import MemoList from "../../memos/MemoList";
 
 interface IProps {
   issue: ReadIssueModel;
+  DeleteMemoHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  ChangeCreateMemoHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  CreateMemoHandler: () => void;
 }
 
-const ReadIssueItem = ({ issue }: IProps) => {
+const ReadIssueItem = ({
+  issue,
+  DeleteMemoHandler,
+  ChangeCreateMemoHandler,
+  CreateMemoHandler,
+}: IProps) => {
   return (
     <div className="read_issue_item">
       <header className={styles.read_issue_item_header}>
@@ -23,7 +31,12 @@ const ReadIssueItem = ({ issue }: IProps) => {
       <div className={styles.read_issue_item_content}>
         <p className={styles.read_issue_item_content_text}>{issue.content}</p>
         <div className={styles.read_issue_item_content_memos}>
-          <MemoList memos={issue.memos} />
+          <MemoList
+            memos={issue.memos}
+            DeleteMemoHandler={DeleteMemoHandler}
+            ChangeCreateMemoHandler={ChangeCreateMemoHandler}
+            CreateMemoHandler={CreateMemoHandler}
+          />
         </div>
       </div>
     </div>

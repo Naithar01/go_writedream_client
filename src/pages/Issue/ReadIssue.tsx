@@ -4,11 +4,13 @@ import { ReadIssue, ReadIssueModel } from "../../Lib/issue";
 import ReadIssueItem from "../../components/Issues/item/ReadIssueItem";
 
 import styles from "../../styles/Issues/ReadIssue.module.css";
+import { CreateMemo, DeleteMemo } from "../../Lib/memo";
 
 const ReadIssuePage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [issue, setIssue] = useState<ReadIssueModel>();
+  const [createMemoText, setCreateMemoText] = useState<string>("");
 
   const issue_id: string | undefined = params.issue_id;
 
@@ -39,12 +41,64 @@ const ReadIssuePage = () => {
     return;
   };
 
+  const DeleteMemoHandler = async (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    const id = event.currentTarget.name;
+
+    if (!id) {
+      return;
+    }
+
+    // 서버로 Delete 하고싶은 Memo id를 보내고 성공했다면 true
+    // 그게 아니라 오류가 생겼다면 false를 반환받음
+    const check_status = await DeleteMemo(Number(id));
+    if (!check_status) {
+      alert("Delete Memo Fail");
+      return;
+    }
+
+    window.location.reload();
+    return;
+  };
+
+  const ChangeCreateMemoHandler = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setCreateMemoText(event.target.value);
+  };
+
+  const CreateMemoHandler = async () => {
+    if (!createMemoText.trim().length) {
+      alert("Check Memo Input State");
+      return;
+    }
+
+    const data = await CreateMemo(Number(issue_id), createMemoText);
+
+    const created_id: number = data.id;
+
+    if (!created_id) {
+      alert("Craete Memo Fail");
+      return;
+    }
+    window.location.reload();
+    return;
+  };
+
   return (
     <div className="read_issue_page">
       <div onClick={GoBack} className={styles.go_back_btn}>
         Go Back
       </div>
-      {issue && <ReadIssueItem issue={issue} />}
+      {issue && (
+        <ReadIssueItem
+          issue={issue}
+          DeleteMemoHandler={DeleteMemoHandler}
+          ChangeCreateMemoHandler={ChangeCreateMemoHandler}
+          CreateMemoHandler={CreateMemoHandler}
+        />
+      )}
     </div>
   );
 };
