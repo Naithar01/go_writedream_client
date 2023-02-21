@@ -23,3 +23,8 @@
 ## 8
 
 - Issue를 삭제해주는 코드 추가
+
+2023-02-21 22:10
+ReadIssue (상세 페이지) 꾸미기
+Issue의 Create, Update
+MainPage 꾸미기
