@@ -1,3 +1,4 @@
+import { DELETE_ISSUE_STATE, DELETE_STATUS } from "./action";
 import { MemoModel } from "./memo";
 
 export interface IssueModel {
@@ -62,6 +63,24 @@ export const ReadIssue = async (issue_id: Number) => {
     .then((res) => res.json())
     .then((data) => {
       return data;
+    })
+    .catch((err) => {
+      alert("Error");
+    });
+};
+
+export const DeleteIssue = async (id: number) => {
+  return await fetch(`/api/issues/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (res.status == DELETE_ISSUE_STATE) {
+        return true;
+      }
+      return false;
     })
     .catch((err) => {
       alert("Error");

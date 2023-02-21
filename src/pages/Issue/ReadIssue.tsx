@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ReadIssue, ReadIssueModel } from "../../Lib/issue";
+import { DeleteIssue, ReadIssue, ReadIssueModel } from "../../Lib/issue";
 import ReadIssueItem from "../../components/Issues/item/ReadIssueItem";
 
 import styles from "../../styles/Issues/ReadIssue.module.css";
@@ -86,6 +86,19 @@ const ReadIssuePage = () => {
     return;
   };
 
+  const DeleteIssueHandler = async (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    const check_status = await DeleteIssue(Number(issue_id));
+    if (!check_status) {
+      alert("Delete Memo Fail");
+      return;
+    }
+
+    navigate("/issues");
+    return;
+  };
+
   return (
     <div className="read_issue_page">
       <div onClick={GoBack} className={styles.go_back_btn}>
@@ -97,6 +110,7 @@ const ReadIssuePage = () => {
           DeleteMemoHandler={DeleteMemoHandler}
           ChangeCreateMemoHandler={ChangeCreateMemoHandler}
           CreateMemoHandler={CreateMemoHandler}
+          DeleteIssueHandler={DeleteIssueHandler}
         />
       )}
     </div>

@@ -12,7 +12,7 @@
 /* Issue의 Content를 묶는 클래스, Header와의 공백을 위함 */
 .read_issue_item_content {
   padding-top: 25px;
-  margin-top: 25px;
+  margin-top: 15px;
   border-top: 1px solid #ddd;
 }
 
@@ -24,4 +24,10 @@
 /* Issue의 택스트 영역의 Memo 부분과 거리를 두기 위한 */
 .read_issue_item_content_text {
   min-height: 560px;
+}
+
+/* Issue의 Header에서 Memo Count, Create_at 부분의 줄바꿈을 위함 */
+.read_issue_item_header_issue_count {
+  display: block;
+  padding-bottom: 15px;
 }

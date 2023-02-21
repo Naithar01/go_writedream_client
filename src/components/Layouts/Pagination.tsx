@@ -42,6 +42,9 @@ const Pagination = ({
 
   const changePageLimitHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const page_limit_value: number = +e.target.value;
+    if (page == 0) {
+      page = 1;
+    }
     navigate(`/issues?page=${page}&page_limit=${page_limit_value}`);
     window.location.reload();
   };

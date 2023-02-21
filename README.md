@@ -19,3 +19,7 @@
 - ReadIssue (상세 페이지) 꾸미기
 - Issue의 Create, Update, Delete,
 - MainPage 꾸미기
+
+## 8
+
+- Issue를 삭제해주는 코드 추가
