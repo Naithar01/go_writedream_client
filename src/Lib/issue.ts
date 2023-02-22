@@ -21,6 +21,11 @@ export interface ReadIssueModel {
   memos: MemoModel[];
 }
 
+export interface NewIssueModel {
+  title: string;
+  content: string;
+}
+
 export const GetIssuePagination = async (page: number, page_limit: number) => {
   if (page == 0 || page_limit == 0) {
     return await fetch(`/api/issues?page=1&page_limit=5`, {
@@ -81,6 +86,23 @@ export const DeleteIssue = async (id: number) => {
         return true;
       }
       return false;
+    })
+    .catch((err) => {
+      alert("Error");
+    });
+};
+
+export const CreateIssue = async (create_data: NewIssueModel) => {
+  return await fetch(`/api/issues?category_id=1`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(create_data),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
     })
     .catch((err) => {
       alert("Error");

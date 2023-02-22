@@ -1,0 +1,29 @@
+/* Template과 PageHeader의 공백 */
+.create_issue_template {
+  margin-top: 20px;
+}
+
+/* Input 끼리의 거리 */
+.create_issue_template_inp {
+  margin-bottom: 20px;
+}
+
+/* Input과 Label의 Br 효과 */
+.create_issue_template_inp label {
+  display: block;
+}
+
+/* Input의 Css 효과 */
+.create_issue_template_inp input {
+  padding: 3px 4px;
+  outline: none;
+}
+
+/* TextArea ( Content ) */
+.create_issue_template_inp textarea {
+  width: 50%;
+  padding: 4px;
+  min-width: 300px;
+  min-height: 400px;
+  outline: none;
+}
