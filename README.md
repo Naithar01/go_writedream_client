@@ -27,3 +27,9 @@
 ## 9
 
 - Issue를 생성할 수 있는 코드 추가
+
+## 2023-02-22 20:22
+
+- ReadIssue (상세 페이지) 꾸미기
+- Issue의 Update
+- MainPage 꾸미기
