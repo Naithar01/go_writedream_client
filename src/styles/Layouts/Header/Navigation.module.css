@@ -28,10 +28,18 @@
 /* li 태그의 list 속성 */
 /* li 태그의 일자로 나열 */
 /* li 태그끼리의 거리 */
+/* li 태그끼리의 경계 구분 */
 .navigation_header_page_list li {
   display: inline;
   list-style: none;
   margin-left: 8px;
+  border-left: 1px solid black;
+  padding-left: 8px;
+}
+
+/* li 태그의 첫 번째 요소는 border 속성 제거 */
+.navigation_header_page_list li:first-child {
+  border: none;
 }
 
 /* a 태그의 클릭이 되는 면적을 넓혀주는 코드 */

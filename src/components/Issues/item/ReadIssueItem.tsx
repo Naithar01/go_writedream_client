@@ -36,7 +36,19 @@ const ReadIssueItem = ({
         </p>
       </header>
       <div className={styles.read_issue_item_content}>
-        <p className={styles.read_issue_item_content_text}>{issue.content}</p>
+        <div className={styles.read_issue_item_content_text}>
+          {issue.content.split("\n").map((contentData, i) =>
+            contentData.length ? (
+              <p key={i} className="content">
+                {contentData}
+              </p>
+            ) : (
+              <p key={i} className="content">
+                &nbsp;
+              </p>
+            )
+          )}
+        </div>
         <div className={styles.read_issue_item_content_memos}>
           <MemoList
             memos={issue.memos}

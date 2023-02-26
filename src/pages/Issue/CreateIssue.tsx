@@ -8,7 +8,7 @@ const CreateIssuePage = () => {
   const navigate = useNavigate();
   const [newIssue, setNewIssue] = useState<NewIssueModel>({
     title: "",
-    content: "",
+    content: ``,
   });
 
   const ChangeInputHandler = (

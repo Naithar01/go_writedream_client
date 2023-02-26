@@ -33,3 +33,12 @@
 - ReadIssue (상세 페이지) 꾸미기
 - Issue의 Update
 - MainPage 꾸미기
+
+## 10
+
+- Header (Navbar)에 Issue를 만들 수 있는 페이지로 이동하는 버튼 추가
+- Issue를 만들 때 제목이 아닌 내용 부분에서 줄바꿈이 구현되도록
+
+## 2023-02-26 22:32
+
+- Issue를 만들 때 Category를 선택할 수 있게 구현

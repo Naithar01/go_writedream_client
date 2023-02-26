@@ -13,6 +13,9 @@ const Navigation = () => {
             <li>
               <a href="/issues?page=1&page_limit=5">Issues</a>
             </li>
+            <li>
+              <Link to="/issues/new">New Issue</Link>
+            </li>
           </ul>
         </div>
       </header>
