@@ -92,8 +92,11 @@ export const DeleteIssue = async (id: number) => {
     });
 };
 
-export const CreateIssue = async (create_data: NewIssueModel) => {
-  return await fetch(`/api/issues?category_id=1`, {
+export const CreateIssue = async (
+  create_data: NewIssueModel,
+  selectedCategory: string
+) => {
+  return await fetch(`/api/issues?category_id=${selectedCategory}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

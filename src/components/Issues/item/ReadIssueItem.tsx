@@ -23,15 +23,15 @@ const ReadIssueItem = ({
       <header className={styles.read_issue_item_header}>
         <div className={styles.read_issue_item_header_title}>{issue.title}</div>
         <p className="read_issue_item_header_create_at">
-          Create: {new Date(issue.created_at).toLocaleString()}
+          独白创作: {new Date(issue.created_at).toLocaleString()}
         </p>
         <span className={styles.read_issue_item_header_issue_count}>
-          Memos: {issue.memos ? issue.memos.length : 0} || Views:
+          独白备忘录: {issue.memos ? issue.memos.length : 0} || 视图计数独白:
           {issue.view_count}
         </span>
         <p className="read_issue_item_header_issue_actions">
           <button type="button" onClick={DeleteIssueHandler}>
-            Delete
+            删去独白
           </button>
         </p>
       </header>

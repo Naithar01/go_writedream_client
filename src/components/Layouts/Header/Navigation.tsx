@@ -6,15 +6,15 @@ const Navigation = () => {
     <div className={styles.main_navigation}>
       <header className={styles.navigation_header}>
         <div className={styles.navigation_header_page_logo}>
-          <Link to="/">Page Logo</Link>
+          <Link to="/">Zl존정호</Link>
         </div>
         <div className={styles.navigation_header_page_list}>
           <ul>
             <li>
-              <a href="/issues?page=1&page_limit=5">Issues</a>
+              <a href="/issues?page=1&page_limit=5">兹洛独白</a>
             </li>
             <li>
-              <Link to="/issues/new">New Issue</Link>
+              <Link to="/issues/new">独白</Link>
             </li>
           </ul>
         </div>

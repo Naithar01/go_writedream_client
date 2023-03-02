@@ -24,10 +24,10 @@ const IssueItem = ({ issue }: IProps) => {
           </p>
         </Link>
         <p className={styles.issue_list_header_create_at}>
-          작성일: {new Date(issue.created_at).toLocaleString()}
+          独白创作: {new Date(issue.created_at).toLocaleString()}
         </p>
         <p className={styles.issue_list_header_create_at}>
-          조회 횟수: {issue.view_count}
+          视图计数独白: {issue.view_count}
         </p>
       </header>
     </div>

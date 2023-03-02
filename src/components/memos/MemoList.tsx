@@ -19,17 +19,17 @@ const MemoList = ({
   return (
     <div className={styles.memo_list}>
       <div className={styles.memo_list_new_memo}>
-        <label htmlFor="memo">New Memo: </label>
+        <label htmlFor="memo">独白</label>
         <input
           type="text"
           name="memo"
           id="memo"
-          placeholder="Enter New Memo"
+          placeholder="さとうもか"
           onChange={ChangeCreateMemoHandler}
           autoComplete="off"
         />
         <button type="button" onClick={CreateMemoHandler}>
-          Create Memo
+          独白
         </button>
       </div>
       {memos && memos.length ? (
@@ -43,7 +43,7 @@ const MemoList = ({
             />
           ))
       ) : (
-        <p className={styles.memo_list_alter}>No Memo List...</p>
+        <p className={styles.memo_list_alter}>...</p>
       )}
     </div>
   );

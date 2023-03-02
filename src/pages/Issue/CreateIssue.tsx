@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NewIssueTemplate from "../../components/Issues/NewIssueTemplate";
 import PageHeader from "../../components/Layouts/Header/PageHeader";
+import { CategoryModel, GetAllCategory } from "../../Lib/category";
 import { CreateIssue, NewIssueModel } from "../../Lib/issue";
 
 const CreateIssuePage = () => {
@@ -10,6 +11,8 @@ const CreateIssuePage = () => {
     title: "",
     content: ``,
   });
+  const [categoryList, setCategoryList] = useState<CategoryModel[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const ChangeInputHandler = (
     event:
@@ -32,7 +35,7 @@ const CreateIssuePage = () => {
       return;
     }
 
-    const data = await CreateIssue(newIssue);
+    const data = await CreateIssue(newIssue, selectedCategory);
 
     if (!data.id) {
       window.location.reload();
@@ -43,12 +46,42 @@ const CreateIssuePage = () => {
     return;
   };
 
+  useEffect(() => {
+    GetAllCategoryListHandler();
+  }, []);
+
+  const GetAllCategoryListHandler = async () => {
+    const data = await GetAllCategory();
+
+    if (!data.categories) {
+      window.location.reload();
+      return;
+    }
+
+    setCategoryList(data.categories);
+    setSelectedCategory(data.categories[0].id);
+  };
+
+  const ChangeCategoryOptionHandler = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const category_id: string = e.target.value;
+
+    if (!category_id) {
+      return;
+    }
+
+    setSelectedCategory(category_id);
+  };
+
   return (
     <div className="create_issue_page">
-      <PageHeader text="New Issue" />
+      <PageHeader text="新独白" />
       <NewIssueTemplate
         ChangeInputHandler={ChangeInputHandler}
         CreateIssueHandler={CreateIssueHandler}
+        categoryList={categoryList}
+        ChangeCategoryOptionHandler={ChangeCategoryOptionHandler}
       />
     </div>
   );

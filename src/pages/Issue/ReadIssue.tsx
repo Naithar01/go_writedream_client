@@ -102,7 +102,7 @@ const ReadIssuePage = () => {
   return (
     <div className="read_issue_page">
       <div onClick={GoBack} className={styles.go_back_btn}>
-        Go Back
+        准备独白
       </div>
       {issue && (
         <ReadIssueItem

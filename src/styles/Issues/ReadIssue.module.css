@@ -19,6 +19,7 @@
 /* 뒤로가기 버튼 Css */
 .go_back_btn {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Issue의 택스트 영역의 Memo 부분과 거리를 두기 위한 */

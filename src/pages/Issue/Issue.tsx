@@ -34,7 +34,7 @@ const IssuePage = () => {
       await GetIssuePagination(Number(page), page_limit);
 
     // 만약에 해당 페이지에 내용물이 없다면...
-    if (datas.issues == null) {
+    if (datas.issues == null && page != "1") {
       navigate(`/issues?page=1&page_limit=${page_limit}`);
       window.location.reload();
       return;
@@ -55,7 +55,7 @@ const IssuePage = () => {
 
   return (
     <div className="issue_page">
-      <PageHeader text="Issue List" />
+      <PageHeader text="独白列表" />
 
       {/* 서버에서 가져온 Issue들을 Issue 컴포넌트로, Issue 컴포넌트에서는 map 함수 사용, Issue List 컴포넌트로 */}
       {issues && <IssueList issues={issues} />}

@@ -13,7 +13,7 @@ const MemoItem = ({ memo, DeleteMemoHandler }: Props) => {
       <header className="memo_item_header">
         <p className={styles.memo_item_header_text}>{memo.text}</p>
         <span className={styles.memo_item_header_create_at}>
-          Create: {new Date(memo.created_at).toLocaleString()}
+          独白创作: {new Date(memo.created_at).toLocaleString()}
         </span>
       </header>
       <div className="memo_item_actions">
@@ -23,7 +23,7 @@ const MemoItem = ({ memo, DeleteMemoHandler }: Props) => {
           className="memo_item_actions_delete"
           onClick={DeleteMemoHandler}
         >
-          Delete
+          删去独白
         </button>
       </div>
     </div>
