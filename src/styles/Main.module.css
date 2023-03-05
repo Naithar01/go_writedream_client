@@ -1,0 +1,24 @@
+/* 정보를 담을 최상위 2번째 div */
+.main_page_my_Info {
+  margin-top: 25px;
+}
+
+/* 최상위 2번째 div에서 3번째  */
+.main_page_my_Info:nth-child(3) small {
+  font-size: 12px;
+}
+
+/* 마우스 올릴시에 이벤트 */
+.main_page_my_Info p:hover {
+  text-decoration: underline;
+}
+
+/* 보라색 글자 -> 검은색 */
+.main_page_my_Info a {
+  color: black;
+}
+
+/* 최상위 2번째 div 안의 상위 div  */
+.main_page_my_Info_default_Info {
+  margin-bottom: 10px;
+}

@@ -46,3 +46,13 @@
 ## 11
 
 - Issue를 만들 때 Category를 선택할 수 있게 구현
+
+## 12
+
+- Loading 컴포넌트 추가
+
+## 13
+
+- Main 페이지 추가
+- Header ( Navigation 수정 )
+- 페이징 처리 수정 ( a 태그 Link 태그로 수정 ( Issue.tsx useEffect 수정 ) )

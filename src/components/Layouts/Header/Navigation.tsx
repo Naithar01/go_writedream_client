@@ -11,7 +11,7 @@ const Navigation = () => {
         <div className={styles.navigation_header_page_list}>
           <ul>
             <li>
-              <a href="/issues?page=1&page_limit=5">兹洛独白</a>
+              <Link to="/issues?page=1&page_limit=5">兹洛独白</Link>
             </li>
             <li>
               <Link to="/issues/new">独白</Link>

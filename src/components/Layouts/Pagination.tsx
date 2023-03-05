@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useNavigate, useNavigation, useRoutes } from "react-router-dom";
 import styles from "../../styles/Layouts/Pagination.module.css";
 
@@ -27,12 +28,12 @@ const Pagination = ({
       } else {
         pagination_items.push(
           <li key={i}>
-            <a
-              href={`/${name}?page=${i}&page_limit=${page_limit}`}
+            <Link
+              to={`/${name}?page=${i}&page_limit=${page_limit}`}
               className="pagination_page_btn_item"
             >
               {i}
-            </a>
+            </Link>
           </li>
         );
       }
