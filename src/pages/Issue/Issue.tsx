@@ -4,6 +4,7 @@ import { GetIssuePagination, IssueModel } from "../../Lib/issue";
 import IssueList from "../../components/Issues/IssueList";
 import PageHeader from "../../components/Layouts/Header/PageHeader";
 import Pagination from "../../components/Layouts/Pagination";
+import LoadingPage from "../IsLoading";
 
 const IssuePage = () => {
   const navigate = useNavigate();
@@ -53,10 +54,9 @@ const IssuePage = () => {
     }
   };
 
-  return (
+  return issues.length ? (
     <div className="issue_page">
       <PageHeader text="独白列表" />
-
       {/* 서버에서 가져온 Issue들을 Issue 컴포넌트로, Issue 컴포넌트에서는 map 함수 사용, Issue List 컴포넌트로 */}
       {issues && <IssueList issues={issues} />}
       {/* 페이징 처리를 해주는 코드 */}
@@ -67,6 +67,8 @@ const IssuePage = () => {
         name={"issues"}
       />
     </div>
+  ) : (
+    <LoadingPage />
   );
 };
 

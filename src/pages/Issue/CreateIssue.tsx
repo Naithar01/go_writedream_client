@@ -4,6 +4,7 @@ import NewIssueTemplate from "../../components/Issues/NewIssueTemplate";
 import PageHeader from "../../components/Layouts/Header/PageHeader";
 import { CategoryModel, GetAllCategory } from "../../Lib/category";
 import { CreateIssue, NewIssueModel } from "../../Lib/issue";
+import LoadingPage from "../IsLoading";
 
 const CreateIssuePage = () => {
   const navigate = useNavigate();
@@ -74,7 +75,7 @@ const CreateIssuePage = () => {
     setSelectedCategory(category_id);
   };
 
-  return (
+  return selectedCategory ? (
     <div className="create_issue_page">
       <PageHeader text="新独白" />
       <NewIssueTemplate
@@ -84,6 +85,8 @@ const CreateIssuePage = () => {
         ChangeCategoryOptionHandler={ChangeCategoryOptionHandler}
       />
     </div>
+  ) : (
+    <LoadingPage />
   );
 };
 

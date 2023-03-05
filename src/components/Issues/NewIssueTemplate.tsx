@@ -22,16 +22,20 @@ const NewIssueTemplate = ({
 }: IProps) => {
   return (
     <div className={styles.create_issue_template}>
-      <select
-        name="create_issue_template_category"
-        onChange={ChangeCategoryOptionHandler}
-      >
-        {categoryList.map((category) => (
-          <option key={category.id} value={category.id}>
-            {category.title}
-          </option>
-        ))}
-      </select>
+      <label htmlFor="create_issue_template_category">独白类</label>
+      <div className="create_issue_template_category_list">
+        <select
+          id="create_issue_template_category"
+          name="create_issue_template_category"
+          onChange={ChangeCategoryOptionHandler}
+        >
+          {categoryList.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.title}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className={styles.create_issue_template_inp}>
         <label htmlFor="title">输入独白标题</label>
         <input
