@@ -43,7 +43,7 @@ const IssuePage = () => {
       return;
     }
     // Issue list
-    setIssues(datas.issues);
+    setIssues(issue_data);
     // 최대 몇 개의 Issue가 있는지
     setIssuesListCount(datas.issues_count);
     // 최대 페이지를 구하는 코드
