@@ -36,7 +36,7 @@ const IssuePage = () => {
 
     console.log(datas);
 
-    const issue_data = datas;
+    const issue_data = datas.issues;
     const issues_count = datas.issues_count;
 
     // 만약에 해당 페이지에 내용물이 없다면...
