@@ -4,15 +4,12 @@ export interface CategoryModel {
 }
 
 export const GetAllCategory = async () => {
-  return await fetch(
-    `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/categories`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  )
+  return await fetch(`/api/categories`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
     .then((res) => res.json())
     .then((data) => {
       return data;
