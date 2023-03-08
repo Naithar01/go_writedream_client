@@ -34,8 +34,10 @@ export const GetIssuePagination = async (page: number, page_limit: number) => {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => res.json())
+      .then(async (res) => await res.json())
       .then((data) => {
+        console.log(data);
+
         return data;
       })
       .catch((err) => {

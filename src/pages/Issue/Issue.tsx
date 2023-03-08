@@ -34,8 +34,6 @@ const IssuePage = () => {
   const GetIssues = async () => {
     const datas = await GetIssuePagination(Number(page), page_limit);
 
-    console.log(datas);
-
     const issue_data = datas.issues;
     const issues_count = datas.issues_count;
 
