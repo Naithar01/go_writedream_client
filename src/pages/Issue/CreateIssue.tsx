@@ -54,7 +54,9 @@ const CreateIssuePage = () => {
   const GetAllCategoryListHandler = async () => {
     const data = await GetAllCategory();
 
-    if (!data.categories) {
+    const { categories } = data;
+
+    if (!categories) {
       window.location.reload();
       return;
     }

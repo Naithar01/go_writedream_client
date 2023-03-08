@@ -32,13 +32,12 @@ const IssuePage = () => {
   }, [page]);
 
   const GetIssues = async () => {
-    const datas: { issues: IssueModel[]; issues_count: number } =
-      await GetIssuePagination(Number(page), page_limit);
+    const datas = await GetIssuePagination(Number(page), page_limit);
 
-    setIsLoading(true);
+    const issue_data = datas;
 
     // 만약에 해당 페이지에 내용물이 없다면...
-    if (datas.issues == null && page != "1") {
+    if (!issue_data && page != "1") {
       navigate(`/issues?page=1&page_limit=${page_limit}`);
       window.location.reload();
       return;
@@ -55,6 +54,8 @@ const IssuePage = () => {
     } else {
       setIssuePaginationMaxPage(Math.ceil(datas.issues_count / 5));
     }
+
+    setIsLoading(true);
   };
 
   return isLoading ? (
