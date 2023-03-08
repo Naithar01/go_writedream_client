@@ -18,6 +18,7 @@ const MainPage = () => {
           <p>서울언주초등학교</p>
           <p>은성중학교</p>
           <p>서울전자고등학교</p>
+          <p>동양미래대학교</p>
         </div>
         <div className={styles.main_page_my_Info}>
           <h2>在职公司</h2>
@@ -27,9 +28,7 @@ const MainPage = () => {
           </div>
           <div className={styles.main_page_my_Info_default_Info}>
             <p>모아소프트 2023.01.09 ~ </p>
-            <small>
-              스마트사업개발본부 - AI Data Science 연구소 - 선임연구원
-            </small>
+            <small>스마트사업개발본부 - AI Data Science 연구소 - 사원</small>
           </div>
         </div>
         <div className={styles.main_page_my_Info}>

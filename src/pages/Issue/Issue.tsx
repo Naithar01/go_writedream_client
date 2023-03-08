@@ -13,6 +13,7 @@ const IssuePage = () => {
   const [issues_list_count, setIssuesListCount] = useState<number>(0);
   const [issuePaginationMaxPage, setIssuePaginationMaxPage] =
     useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   let page: string | null = searchParams.get("page");
   let page_limit: number = Number(searchParams.get("page_limit"));
@@ -34,6 +35,8 @@ const IssuePage = () => {
     const datas: { issues: IssueModel[]; issues_count: number } =
       await GetIssuePagination(Number(page), page_limit);
 
+    setIsLoading(true);
+
     // 만약에 해당 페이지에 내용물이 없다면...
     if (datas.issues == null && page != "1") {
       navigate(`/issues?page=1&page_limit=${page_limit}`);
@@ -54,7 +57,7 @@ const IssuePage = () => {
     }
   };
 
-  return issues && issues.length ? (
+  return isLoading ? (
     <div className="issue_page">
       <PageHeader text="独白列表" />
       {/* 서버에서 가져온 Issue들을 Issue 컴포넌트로, Issue 컴포넌트에서는 map 함수 사용, Issue List 컴포넌트로 */}
