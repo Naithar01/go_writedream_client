@@ -28,12 +28,15 @@ export interface NewIssueModel {
 
 export const GetIssuePagination = async (page: number, page_limit: number) => {
   if (page == 0 || page_limit == 0) {
-    return await fetch(`/api/issues?page=1&page_limit=5`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    return await fetch(
+      `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/issues?page=1&page_limit=5`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         return data;
@@ -43,12 +46,15 @@ export const GetIssuePagination = async (page: number, page_limit: number) => {
       });
   }
 
-  return await fetch(`/api/issues?page=${page}&page_limit=${page_limit}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
+  return await fetch(
+    `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/issues?page=${page}&page_limit=${page_limit}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       return data;
@@ -59,12 +65,15 @@ export const GetIssuePagination = async (page: number, page_limit: number) => {
 };
 
 export const ReadIssue = async (issue_id: Number) => {
-  return await fetch(`/api/issues/${issue_id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
+  return await fetch(
+    `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/issues/${issue_id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       return data;
@@ -75,12 +84,15 @@ export const ReadIssue = async (issue_id: Number) => {
 };
 
 export const DeleteIssue = async (id: number) => {
-  return await fetch(`/api/issues/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
+  return await fetch(
+    `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/issues/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
     .then((res) => {
       if (res.status == DELETE_ISSUE_STATE) {
         return true;
@@ -96,13 +108,16 @@ export const CreateIssue = async (
   create_data: NewIssueModel,
   selectedCategory: string
 ) => {
-  return await fetch(`/api/issues?category_id=${selectedCategory}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(create_data),
-  })
+  return await fetch(
+    `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/issues?category_id=${selectedCategory}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(create_data),
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       return data;
