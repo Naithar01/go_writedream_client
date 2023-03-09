@@ -34,26 +34,23 @@ const IssuePage = () => {
   const GetIssues = async () => {
     const datas = await GetIssuePagination(Number(page), page_limit);
 
-    const issue_data = datas.issues;
-    const issues_count = datas.issues_count;
-
     // 만약에 해당 페이지에 내용물이 없다면...
-    if (!issue_data && page != "1") {
+    if (!datas.issues && page != "1") {
       navigate(`/issues?page=1&page_limit=${page_limit}`);
       window.location.reload();
       return;
     }
     // Issue list
-    setIssues(issue_data);
+    setIssues(datas.issues);
     // 최대 몇 개의 Issue가 있는지
-    setIssuesListCount(issues_count);
+    setIssuesListCount(datas.issues_count);
     // 최대 페이지를 구하는 코드
     // page_limit Query가 있으면 Query로 Max Page 계산
     // 그게 아니면 서버에서 빈 값으로 왔을 때 page_limit을 5로 해놨음
     if (page_limit) {
-      setIssuePaginationMaxPage(Math.ceil(issues_count / page_limit));
+      setIssuePaginationMaxPage(Math.ceil(datas.issues_count / page_limit));
     } else {
-      setIssuePaginationMaxPage(Math.ceil(issues_count / 5));
+      setIssuePaginationMaxPage(Math.ceil(datas.issues_count / 5));
     }
 
     setIsLoading(true);
