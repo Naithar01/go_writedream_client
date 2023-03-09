@@ -1,7 +1,12 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "dest": "http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/$1"
+      "source": "/api/:path*",
+      "destination": "http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/:path*"
+    },
+    {
+      "source": "/api/:path*/",
+      "destination": "http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/:path*/"
     }
   ]
 }
