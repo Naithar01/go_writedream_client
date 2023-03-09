@@ -28,7 +28,7 @@ export interface NewIssueModel {
 
 export const GetIssuePagination = async (page: number, page_limit: number) => {
   if (page == 0 || page_limit == 0) {
-    return await fetch(`/.netlify/functions/api/issues?page=1&page_limit=5`, {
+    return await fetch(`/api/issues?page=1&page_limit=5`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
