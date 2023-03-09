@@ -28,18 +28,22 @@ export interface NewIssueModel {
 
 export const GetIssuePagination = async (page: number, page_limit: number) => {
   if (page == 0 || page_limit == 0) {
-    return await fetch(`/api/issues?page=1&page_limit=5`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    return await fetch(
+      `http://ec2-3-39-189-105.ap-northeast-2.compute.amazonaws.com:8080/api/issues?page=1&page_limit=5`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then(async (res) => res.json())
       .then((data) => {
         return data;
       })
       .catch((err) => {
         alert("Error");
+        console.log(err);
       });
   }
 
@@ -55,6 +59,7 @@ export const GetIssuePagination = async (page: number, page_limit: number) => {
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };
 
@@ -71,6 +76,7 @@ export const ReadIssue = async (issue_id: Number) => {
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };
 
@@ -89,6 +95,7 @@ export const DeleteIssue = async (id: number) => {
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };
 
@@ -109,5 +116,6 @@ export const CreateIssue = async (
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };

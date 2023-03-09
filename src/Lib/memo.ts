@@ -22,6 +22,7 @@ export const DeleteMemo = async (id: number) => {
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };
 
@@ -39,5 +40,6 @@ export const CreateMemo = async (id: number, text: string) => {
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };

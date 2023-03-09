@@ -16,5 +16,6 @@ export const GetAllCategory = async () => {
     })
     .catch((err) => {
       alert("Error");
+      console.log(err);
     });
 };
