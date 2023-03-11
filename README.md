@@ -56,3 +56,7 @@
 - Main 페이지 추가
 - Header ( Navigation 수정 )
 - 페이징 처리 수정 ( a 태그 Link 태그로 수정 ( Issue.tsx useEffect 수정 ) )
+
+## 14 
+
+-vercel 배포한 이후 CORS 에러 해결해야함
